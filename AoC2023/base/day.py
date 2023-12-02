@@ -12,6 +12,8 @@ class Day:
 
     def __init__(self):
         self.file_dir = root / "data" / self.__class__.__name__.lower()
+        if not self.file_dir.exists():
+            self.file_dir.touch()
         self.file: IO | None = None
 
     def run(self):
